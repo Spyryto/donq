@@ -3,7 +3,8 @@
 	"autoload": {
 		"psr-4": {
 			"Domain\\": "Domain/src/",
-			"Config\\": "Config/"
+			"Config\\": "Config/",
+			"DataSource\\": "DataSource/"
 		}
 	},
 	"authors": [
@@ -14,5 +15,8 @@
 	],
 	"require-dev": {
 		"phpunit/phpunit": "9"
+	},
+	"require": {
+		"thecodingmachine/safe": "^1.3"
 	}
 }
