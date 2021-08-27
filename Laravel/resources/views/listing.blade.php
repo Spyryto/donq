@@ -14,7 +14,13 @@
 		<tr onclick="javascript:location.href='/detail/{{ $loop->index }}';">
 			<td><img src="{{ $photo->imageUrl() }}"></td>
 			<td>{{ $photo->title() }}</td>
-			<td>{{ $photo->dateTaken()->format('Y-m-d') }}</td>
+			<td>
+				<script>
+					document.write(
+						new Intl.DateTimeFormat(Intl.DateTimeFormat().resolvedOptions().locale)
+							.format(new Date('{{ $photo->dateTaken()->format('c') }}')));
+				</script>
+			</td>
 		</tr>
 	@endforeach
 
