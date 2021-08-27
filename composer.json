@@ -2,6 +2,7 @@
 	"name": "spyryto/donq",
 	"autoload": {
 		"psr-4": {
+			"Domain\\": "Domain/src/",
 			"Config\\": "Config/"
 		}
 	},
