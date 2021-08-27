@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+require __DIR__ . '/../../main.php';
+
+Route::redirect('/', '/listing');
+
+Route::get('/listing', function () use ($app) {
+    $photoCollection = $app->getPhotoPreviews();
+    return view('listing', ['photos' => $photoCollection]);
+});
+
+Route::get('/detail/{index}', function ($index) use ($app) {
+    $photo = $app->getPhotoDetails((int) $index);
+    return view('detail', ['photo' => $photo]);
+});
+
+Route::get('/refresh', function () use ($app) {
+    $app->refreshData();
+    return redirect('/listing');
 });
