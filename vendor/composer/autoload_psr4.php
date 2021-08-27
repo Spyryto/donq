@@ -12,7 +12,7 @@ return array(
     'Storage\\' => array($baseDir . '/Storage'),
     'Safe\\' => array($vendorDir . '/thecodingmachine/safe/lib', $vendorDir . '/thecodingmachine/safe/deprecated', $vendorDir . '/thecodingmachine/safe/generated'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src/Prophecy'),
-    'Domain\\' => array($baseDir . '/Domain/src'),
+    'Domain\\' => array($baseDir . '/Domain'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'DataSource\\' => array($baseDir . '/DataSource'),

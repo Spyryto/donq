@@ -4,7 +4,7 @@
 		"psr-4": {
 			"Config\\": "Config/",
 			"DataSource\\": "DataSource/",
-			"Domain\\": "Domain/src/",
+			"Domain\\": "Domain/",
 			"Storage\\": "Storage/"
 		}
 	},

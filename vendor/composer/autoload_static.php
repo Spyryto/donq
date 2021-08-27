@@ -164,7 +164,7 @@ class ComposerStaticInita4ea663bec478940505fcabe13c6411c
         ),
         'Domain\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Domain/src',
+            0 => __DIR__ . '/../..' . '/Domain',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
