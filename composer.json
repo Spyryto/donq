@@ -2,9 +2,10 @@
 	"name": "spyryto/donq",
 	"autoload": {
 		"psr-4": {
-			"Domain\\": "Domain/src/",
 			"Config\\": "Config/",
-			"DataSource\\": "DataSource/"
+			"DataSource\\": "DataSource/",
+			"Domain\\": "Domain/src/",
+			"Storage\\": "Storage/"
 		}
 	},
 	"authors": [

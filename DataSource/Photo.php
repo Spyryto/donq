@@ -64,9 +64,9 @@ class Photo implements PhotoPreview, PhotoDetail
 		return $this->description;
 	}
 
-	function published(): string
+	function datePublished(): DateTime
 	{
-		return $this->published;
+		return $this->datePublished;
 	}
 
 	function author(): string

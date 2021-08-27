@@ -16,7 +16,7 @@ interface PhotoDetail
 
 	function description(): string;
 
-	function published(): string;
+	function datePublished(): DateTime;
 
 	function author(): string;
 

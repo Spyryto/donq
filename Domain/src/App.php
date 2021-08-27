@@ -32,12 +32,19 @@ class App
 	function getPhotoPreviews()
 	{
 		$data = $this->storage->read();
+		if (empty($data)) return [];
 		return $this->photoProvider->photoPreviewList($data);
 	}
 
-	function getPhotoDetails()
+	function getPhotoDetails(int $index)
 	{
 		$data = $this->storage->read();
-		return $this->photoProvider->photoDetailList($data);
+		$photos = $this->photoProvider->photoDetailList($data);
+		$photoCount = count($photos);
+		if ($photoCount === 0) {
+			throw new \Exception('Resource not available');
+		}
+		$i = Utils::capBetween(0, $index, $photoCount);
+		return $photos[$i];
 	}
 }

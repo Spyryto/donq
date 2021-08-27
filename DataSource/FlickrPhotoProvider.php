@@ -27,33 +27,38 @@ class FlickrPhotoProvider implements DataSource, PhotoProvider
 		return $contents;
 	}
 
-	/** @return Photo */
-	static function photoFromJson(string $json)
+	/** @return Photo[] */
+	static function photosFromJson(string $json)
 	{
 		$dto = json_decode($json);
 
-		return new Photo(
-			$dto->title,
-			$dto->link,
-			$dto->media['m'],
-			new DateTime($dto->date_taken),
-			$dto->description,
-			new DateTime($dto->published),
-			$dto->author,
-			$dto->author_id,
-			explode(' ', $dto->tags),
-		);
+		$photoCollection = [];
+		foreach ($dto->items as $item) {
+			$photoCollection[] = new Photo(
+				$item->title,
+				$item->link,
+				$item->media->m,
+				new DateTime($item->date_taken),
+				$item->description,
+				new DateTime($item->published),
+				$item->author,
+				$item->author_id,
+				explode(' ', $item->tags),
+			);
+		}
+
+		return $photoCollection;
 	}
 
 	/** @return PhotoDetail[] */
 	function photoDetailList(string $json)
 	{
-		return self::photoFromJson($json);
+		return self::photosFromJson($json);
 	}
 
 	/** @return PhotoPreview[] */
 	function photoPreviewList(string $json)
 	{
-		return self::photoFromJson($json);
+		return self::photosFromJson($json);
 	}
 }

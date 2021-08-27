@@ -3,7 +3,7 @@
 use Domain\App;
 use Config\Settings;
 use DataSource\FlickrPhotoProvider;
-use IO\FileStorage;
+use Storage\FileStorage;
 
 require __DIR__ . '/vendor/autoload.php';
 
